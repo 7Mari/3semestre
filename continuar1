@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner leia = new Scanner(System.in);
+	    
+	  
+	    String[] material = new String[3];
+	    float[] preco = new float[3];
+	    float[] consumo = new float[3];
+	    float[] consumoTotal = new float[3];
+	  
+	  
+	  
+	        for(int i = 1; i <= 3; i++)
+	        {
+	            
+	        System.out.println("Digite o nome do " +i+ "º material");
+	        material[i] = leia.next();
+	        
+	        System.out.println("Digite o nome do preço: ");
+	        preco[i] = leia.nextFloat();
+	        
+	        System.out.println("Digite o consumo anual, unidade: ");
+	        consumo[i] = leia.nextFloat();
+		    
+		    System.out.println("\n");
+		    
+		     
+	        consumoTotal[i] = preco[i] * consumo[i];
+	        System.out.println(i+ "º Valor do consumo anual: " +consumoTotal[i]);
+	        System.out.println("---------------------------------------------------------");
+	    
+	        System.out.println("\n");
+	        }
+	        
+	        for(int i = 1; i <= 3; i++)
+	        {
+	            System.out.println("Material: " +material[i]);
+	            System.out.println("Valor do consumo anual: " +consumoTotal[i]);
+	        }
+	        
+	        
+
+		    leia.close();
+	}
+}
