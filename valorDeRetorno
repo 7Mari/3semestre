@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner leia = new Scanner(System.in);
+	    
+	    float soma = 0;
+	    float total;
+	    
+	    System.out.println("--Tempo de Retorno da empresa--");
+	    
+	    
+	    System.out.println("Valor Inicial: ");
+	    int valorInicial = leia.nextFloat();
+	    
+	    for(int i = 0; i > 6; i++){
+	        System.out.println(+ (i + 1) "º Saldo Recebido: ");
+	        float saldo = leia.nextFloat();
+	        
+	        soma += saldo;
+	    }
+	    
+	    float total1;
+	    float total2;
+	    
+	    total1 = soma / 6;
+	    total2 = valorInicial / total1;
+	    System.out.println("Total do retorno em meses: " +total2);
+	    
+	    
+	    leia.close();
+	}
+}
