@@ -1,47 +1,91 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
-public class Main
-{
-	public static void main(String[] args) {
-	    Scanner leia = new Scanner(System.in);
-	    
-	  
-	    String[] material = new String[3];
-	    float[] preco = new float[3];
-	    float[] consumo = new float[3];
-	    float[] consumoTotal = new float[3];
-	  
-	  
-	  
-	        for(int i = 1; i <= 3; i++)
-	        {
-	            
-	        System.out.println("Digite o nome do " +i+ "º material");
-	        material[i] = leia.next();
-	        
-	        System.out.println("Digite o nome do preço: ");
-	        preco[i] = leia.nextFloat();
-	        
-	        System.out.println("Digite o consumo anual, unidade: ");
-	        consumo[i] = leia.nextFloat();
-		    
-		    System.out.println("\n");
-		    
-		     
-	        consumoTotal[i] = preco[i] * consumo[i];
-	        System.out.println(i+ "º Valor do consumo anual: " +consumoTotal[i]);
-	        System.out.println("---------------------------------------------------------");
-	    
-	        System.out.println("\n");
-	        }
-	        
-	        for(int i = 1; i <= 3; i++)
-	        {
-	            System.out.println("Material: " +material[i]);
-	            System.out.println("Valor do consumo anual: " +consumoTotal[i]);
-	        }
-	        
-	        
 
-		    leia.close();
-	}
+class MaterialConsumo {
+    String material;
+    float preco;
+    float consumo;
+    float consumoTotal;
+
+    MaterialConsumo(String material, float preco, float consumo) {
+        this.material = material;
+        this.preco = preco;
+        this.consumo = consumo;
+        this.consumoTotal = preco * consumo;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-15s %10.2f %10.2f %20.2f", material, preco, consumo, consumoTotal);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        List<MaterialConsumo> listaMaterialConsumo = new ArrayList<>();
+        
+        // Coleta de dados
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Digite o nome do " + (i + 1) + "º material:");
+            String material = leia.next();
+            
+            System.out.println("Digite o preço do " + material + ":");
+            float preco = leia.nextFloat();
+            
+            System.out.println("Digite o consumo anual (unidades) do " + material + ":");
+            float consumo = leia.nextFloat();
+            
+            // Adicionando o material e seu consumo total na lista
+            listaMaterialConsumo.add(new MaterialConsumo(material, preco, consumo));
+        }
+        
+        // Ordenando a lista em ordem decrescente com base no consumo total
+        Collections.sort(listaMaterialConsumo, new Comparator<MaterialConsumo>() {
+            @Override
+            public int compare(MaterialConsumo o1, MaterialConsumo o2) {
+                return Float.compare(o2.consumoTotal, o1.consumoTotal);
+            }
+        });
+
+        // Exibindo a tabela ordenada
+        System.out.println("--Tabela Mestra--");
+        System.out.println("Material         Preço     Consumo Anual  Valor do Consumo Anual");
+        System.out.println("---------------------------------------------------------------");
+        for (MaterialConsumo item : listaMaterialConsumo) {
+            System.out.println(item);
+        }
+
+        System.out.println("\nValor do consumo anual em ordem decrescente: ");
+        for (MaterialConsumo item : listaMaterialConsumo) {
+            System.out.println(item.consumoTotal);
+        }
+        
+        // Cálculo do consumo acumulado
+        float acumulado = 0;
+        for (MaterialConsumo item : listaMaterialConsumo) {
+            acumulado += item.consumoTotal;
+        }
+
+        // Exibindo o consumo acumulado e a porcentagem
+        System.out.println("\nValor do consumo anual Acumulado: " + acumulado);
+        for (MaterialConsumo item : listaMaterialConsumo) {
+            float porcentagem = (item.consumoTotal * 100) / acumulado;
+            System.out.println("\n% sobre o valor do consumo acumulado para " + item.material + ": " + porcentagem + "%");
+            
+            if (porcentagem >= 70) {
+                System.out.println("Classificação: A");
+            } else if (porcentagem >= 50) {
+                System.out.println("Classificação: B");
+            } else {
+                System.out.println("Classificação: C");
+            }
+        }
+        
+        leia.close();
+    }
 }
