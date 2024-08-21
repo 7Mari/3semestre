@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner leia = new Scanner(System.in);
+	    
+	    System.out.println("Materiais |Y| são de importância mediana, com possibilidade de similar existente na empresa.");
+	    System.out.println("Materiais |X| são sem importância, com possibilidade de similar existente na empresa.");
+	    System.out.println("Materiais |Z| são de importância vital, sem similar existente na empresa.");
+	    
+	    
+	    
+	    System.out.println("O material é importante para o equipamento? \t [1]SIM \t [2]NÃO \n");
+	    int codigo1 = leia.nextInt();
+	    
+	    System.out.println("O equipamento é de linha de frente? \t [1]SIM \t [2]NÃO \n");
+	    int codigo2 = leia.nextInt();
+	    
+	    System.out.println("Existe similar? \t [1]SIM \t [2]NÃO \n");
+	    int codigo3 = leia.nextInt();
+	    
+	    if(codigo1 == 1 && codigo2 == 1 && codigo3 == 1){
+	        System.out.println("Material Y");
+	        } else if (codigo1 == 1 && codigo2 == 1 && codigo3 == 2){
+	            System.out.println("Material Z");
+	        } else {
+	            System.out.println("Material X");
+	        }
+	    
+	    leia.close();
+	}
+}
