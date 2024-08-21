@@ -1,0 +1,145 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner leia = new Scanner(System.in);
+	    
+	    
+	    float total;
+	   
+	    
+	    System.out.println("Entradas--");
+	    
+	    System.out.println("\t   |PREVISÃO 1|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1p1 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2p1 = leia.nextFloat();
+	    
+	    float TentradasP1;
+	    TentradasP1 = recebido1p1 + recebido2p1;
+	    System.out.print("T.EntradasR: \t" +TentradasP1);
+	    
+	    
+	    System.out.println("\n\t   |REALIZADO 1|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1r1 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2r1 = leia.nextFloat();
+	    
+	    float TentradasR1;
+	    TentradasR1 = recebido1r1 + recebido2r1;
+	    System.out.print("T.EntradasR: \t" +TentradasR1);
+	    
+	    //previsão e realizado 2
+	    
+	    System.out.println("\n\t   |PREVISÃO 2|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1p2 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2p2 = leia.nextFloat();
+	    
+	    float TentradasP2;
+	    TentradasP2 = recebido1p2 + recebido2p2;
+	    System.out.print("T.EntradasR: \t" +TentradasP2);
+	    
+	    System.out.println("\n\t   |REALIZADO 2|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1r2 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2r2 = leia.nextFloat();
+	    
+	    float TentradasR2;
+	    TentradasR2 = recebido1r2 + recebido2r2;
+	    System.out.print("T.EntradasR: \t" +TentradasR2);
+	    
+	    //previsão e realizado 3
+	    
+	    System.out.println("\n\t   |PREVISÃO 3|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1p3 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2p3 = leia.nextFloat();
+	    
+	    float TentradasP3;
+	    TentradasP3 = recebido1p3 + recebido2p3;
+	    System.out.print("T.EntradasR: \t" +TentradasP3);
+	    
+	    System.out.println("\n\t   |REALIZADO 3|\n");
+	    
+	    System.out.print("Recebido1: \t");
+	    float recebido1r3 = leia.nextFloat();
+	    
+	    System.out.print("Recebido2: \t");
+	    float recebido2r3 = leia.nextFloat();
+	    
+	    float TentradasR3;
+	    TentradasR3 = recebido1r3 + recebido2r3;
+	    System.out.print("T.EntradasR: \t" +TentradasR3);
+	    
+	    //saidas
+	    
+	    System.out.println("\nSaídas--");
+	    
+	    for (int i = 0; i > 6; i++){
+	        System.out.println((i + 1) + "º F.Pagamento: ");
+	        float Fpagamento = leia.nextFloat();
+	        
+	    }
+	    
+	    for (int i = 0; i > 6; i++){
+	        System.out.println("Aluguel: ");
+	        float aluguel = leia.nextFloat();
+	    }
+	    
+	    for (int i = 0; i > 6; i++){
+	        System.out.println("Luz: ");
+	        float luz = leia.nextFloat();
+	    }
+	    
+	    for (int i = 0; i > 6; i++){
+	        System.out.println("Fornecedor: ");
+	        float fornecedor = leia.nextFloat();
+	    }
+	    
+         float soma = 0;
+         soma = Fpagamento + aluguel + luz + fornecedor;
+	    
+	    System.out.print("\n");
+	    
+	    System.out.println("\t\tPREVISÃO 1\tREALIZADO 1\tPREVISÃO 2\tREALIZADO 2\tPREVISÃO 3\tREALIZADO 3");
+            System.out.println("1º Recebido: \t" + recebido1p1 + "\t\t" + recebido1r1 + "\t\t" + recebido1p2 + "\t\t" + recebido1r2 + "\t\t" + recebido1p3 + "\t\t" + recebido1r3);
+            System.out.println("2º Recebido: \t" + recebido2p1 + "\t\t" + recebido2r1 + "\t\t" + recebido2p2 + "\t\t" + recebido2r2 + "\t\t" + recebido2p3 + "\t\t" + recebido2r3);
+            System.out.println("T.Entradas:  \t" + TentradasP1 + "\t\t" + TentradasR1 + "\t\t" + TentradasP2 + "\t\t" + TentradasR2 + "\t\t" + TentradasP3 + "\t\t" + TentradasR3);
+	    System.out.println("Saídas--");
+            System.out.println("F.Pagamento: \t" + Fpagamento);
+            System.out.println("Alguel: \t" + alguel);
+            System.out.println("Luz: \t" + luz);
+            System.out.println("Fornecedor: \t" + fornecedor);
+            System.out.println("1 Saídas: \t"   + soma);
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    System.out.println("1 (ENTRADAS-SAÍDAS): ");
+	    System.out.println("2 SALDO ANTERIOR: ");
+	    System.out.println("3 SALDO ACUMULADO: ");
+	    System.out.println("4 SALDO TOTAL: ");
+	    
+	    leia.close();
+	}
+}
