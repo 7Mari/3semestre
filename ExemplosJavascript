@@ -1,0 +1,99 @@
+soma:--------------------
+
+function somar(a, b){
+    return a + b;
+}
+
+let resultado = somar(5, 3);
+console.log(`A soma dos números é:  ${resultado}`);
+
+contarVogais-------------
+
+function contarVogais(texto){
+    let contador = 0;
+    texto = texto.toLowerCase();
+
+    for (let i = 0; i < texto.length; i++) {
+        if ('aeiou'.includes(texto[i])) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+let resultado = contarVogais('Ola, Mundo');
+console.log(`Vogais:  ${resultado}`);
+
+calculadora----
+
+const calculadora = {
+    somar: function(numero1, numero2){
+        return numero1 + numero2;
+    },
+    subtrair: function(numero1, numero2){
+        return numero1 - numero2;
+    },
+    multiplicar: function (numero1, numero2) {
+        return numero1 * numero2;
+    },
+    executar: function (funcao, numero1, numero2) {
+        return funcao(numero1, numero2);
+    }
+};
+
+calculadora.numero1 = 2;
+calculadora.numero2 = 3;
+
+console.log(calculadora.somar(1,7));
+console.log(calculadora.subtrair(20,3));
+
+console.log(calculadora.executar(calculadora.somar, 2,3));
+console.log(calculadora.executar(calculadora.multiplicar, 5,3));
+
+livro------
+
+const livro = {
+    titulo: '1984',
+    ano : 1949,
+    autor:{
+        nome: 'George Owwell',
+        nacionalidade: 'Britanica'
+    }
+};
+
+console.log(livro.titulo);
+console.log(livro.autor.nome);
+console.log(livro.autor.nacionalidade);
+
+vogais-----
+
+function contarVogais(texto) {
+    let contador = 0;
+    texto = texto.toLowerCase();
+
+    for (let i = 0; i < texto.length; i++) {
+        if ('aeiou' .includes(texto[i])) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+let resultado = contarVogais('Olá, Mundo');
+console.log(`Vogais: ${resultado}`);
+
+pessoa---
+
+function Pessoa(nome, idade){
+    this.nome = nome;
+    this.idade = idade;
+    this.apresentar = function(){
+        console.log(`Olá, meu nome é ${this.nome}, e eu tenho ${this.idade} anos`);
+    }
+}
+
+const pessoa1 = new Pessoa('Alice', 30);
+const pessoa2 = new Pessoa('Bob', 25);
+
+pessoa1.apresentar();
+pessoa2.apresentar();
